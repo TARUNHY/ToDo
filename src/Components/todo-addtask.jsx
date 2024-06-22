@@ -4,6 +4,7 @@ import { useCookies } from 'react-cookie';
 import { useFormik } from 'formik';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { URL} from '../Url'
 
 const TodoAddTask = () => {
     const navigate = useNavigate();
@@ -17,7 +18,7 @@ const TodoAddTask = () => {
         UserId :cookies['userid']
     },
     onSubmit : (task)=>{
-    axios.post('http://localhost:4000/add-task' , task);
+    axios.post(`${URL}/add-task` , task);
     alert('Task added successfully');
     navigate('/dashboard');
     }

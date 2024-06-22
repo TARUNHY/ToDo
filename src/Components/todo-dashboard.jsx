@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import moment from 'moment';
+import {URL} from '../Url'
 
 const TodoDashboard = () => {
     const [cookies,setCookie,removeCookie] = useCookies('userid');
@@ -18,7 +19,7 @@ const TodoDashboard = () => {
         if(cookies['userid']===undefined){
             navigate('/login')
         }else{
-            axios.get(`http://localhost:4000/view-tasks/${cookies['userid']}`).then(res=>{
+            axios.get(`${URL}/view-tasks/${cookies['userid']}`).then(res=>{
                 setAppointments(res.data);
             })
         }

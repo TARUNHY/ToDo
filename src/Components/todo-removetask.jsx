@@ -6,6 +6,7 @@ import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import moment from 'moment';
 import { useNavigate } from 'react-router-dom';
+import { URL} from '../Url'
 
 
 const ToDoRemoveTask = () => {
@@ -14,13 +15,13 @@ const ToDoRemoveTask = () => {
     let params = useParams();
 
     useEffect(()=>{
-        axios.get(`http://localhost:4000/view-task/${params.id}`).then(res=>{
+        axios.get(`${URL}/view-task/${params.id}`).then(res=>{
             setAppointments(res.data);   
         })
     },[params.id])
 
     function handleRemoveClick(){
-    axios.delete(`http://localhost:4000/delete-task/${params.id}`).then(()=>{
+    axios.delete(`${URL}/delete-task/${params.id}`).then(()=>{
       alert('Task Deleted');
       navigate('/dashboard');
       
@@ -47,4 +48,4 @@ const ToDoRemoveTask = () => {
   )
 }
 
-export default ToDoRemoveTask
+export default ToDoRemoveTask;

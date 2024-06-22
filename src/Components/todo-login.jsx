@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import  axios  from 'axios';
 import { useCookies } from 'react-cookie';
+import { URL} from '../Url'
 
 const ToDoLogin = () => {
 
@@ -15,7 +16,7 @@ const ToDoLogin = () => {
       Password : ''
     },
     onSubmit : (user)=>{
-      axios.get('http://localhost:4000/get-users').then(res=>{
+      axios.get(`${URL}/get-users`).then(res=>{
         var client = res.data.find(record => record.UserId === user.UserId);
         if(client){
           if(user.Password === client.Password){

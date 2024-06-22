@@ -2,6 +2,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { URL} from '../Url'
 
 import axios from 'axios'
 
@@ -21,7 +22,7 @@ const TodoRegister = () => {
     },
 
     onSubmit:(user)=>{
-      axios.post(`http://localhost:4000/register-user`, user)
+      axios.post(`${URL}/register-user`, user)
       .then(()=>{
         alert('User Registered');
         navigate('/login');
@@ -30,7 +31,7 @@ const TodoRegister = () => {
   })
 
   function verifyUserId(e){
-    axios.get(`http://localhost:4000/get-users`).then(res=>{
+    axios.get(`${URL}/get-users`).then(res=>{
       for(var user of res.data)
         {
           if(user.UserId === e.target.value){

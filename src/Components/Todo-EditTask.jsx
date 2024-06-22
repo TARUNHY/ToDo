@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useFormik } from 'formik';
 import {useCookies } from 'react-cookie';
 import moment from 'moment';
+import { URL} from '../Url'
 
 
 
@@ -17,7 +18,7 @@ const TodoEditTask = () => {
     let params = useParams();
 
     useEffect(()=>{
-        axios.get(`http://localhost:4000/view-task/${params.id}`).then(res=>{
+        axios.get(`${URL}/view-task/${params.id}`).then(res=>{
             setAppointments(res.data);   
         })
     },[params.id])
@@ -30,7 +31,7 @@ const TodoEditTask = () => {
         UserId : cookies['userid']
      },
      onSubmit:(task)=>{
-        axios.put(`http://localhost:4000/edit-task/${params.id}`, task).then(()=>{
+        axios.put(`${URL}/edit-task/${params.id}`, task).then(()=>{
          alert('Edited Successfully');
          navigate('/dashboard');
         })
