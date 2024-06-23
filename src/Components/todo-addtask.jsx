@@ -41,7 +41,7 @@ const TodoAddTask = () => {
                 <dd><input type="date" name='Date' onChange={formik.handleChange} className='form-control' /></dd>
             </dl>
             <Link to='/dashboard'><button type='submit' className='btn btn-warning w-50'>Cancel</button></Link>
-            <button className='btn btn-danger  w-50 '>Submit</button>
+            <button type='submit' className='btn btn-danger  w-50 '>Submit</button>
         </form>
       
     </div>

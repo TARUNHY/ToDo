@@ -28,9 +28,7 @@ const ToDoRemoveTask = () => {
         });
     }
 
-    if (appointment === null) {
-        return <div>Loading...</div>; // Loading state
-    }
+   
 
     return (
         <div className='d-flex justify-content-center align-items-center'>
@@ -48,8 +46,8 @@ const ToDoRemoveTask = () => {
                 ) : (
                     <p>No task found.</p>
                 )}
-                <button onClick={handleRemoveClick} className='btn btn-danger m-2'>YES</button>
-                <Link to='/dashboard'><button className='btn btn-warning m-2'>NO</button></Link>
+                <button onClick={handleRemoveClick} type='submit' className='btn btn-danger m-2'>YES</button>
+                <Link to='/dashboard'><button type='submit' className='btn btn-warning m-2'>NO</button></Link>
             </div>
         </div>
     );

@@ -62,7 +62,7 @@ const TodoRegister = () => {
             <dt>Mobile</dt>
             <dd><input type="text" autoComplete='false' name='Mobile' onChange={formik.handleChange} className='form-control' /></dd>
         </dl>
-        <button type='submit' className='btn btn-danger w-100'>Register</button>
+        <button type='submit'  className='btn btn-danger w-100'>Register</button>
       
       </form>
       

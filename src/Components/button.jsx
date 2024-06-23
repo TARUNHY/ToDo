@@ -9,9 +9,9 @@ const Button = () => {
         <h2 className=' text-black'>To-Do</h2>
         </div>
         <div>
-        <Link to='/' className='   button1 '>Home</Link>
-        <Link to='/login' className='  button2 '>Sign in</Link>
-        <Link to='/register' className='  button3 '>Sign up</Link>
+        <Link to='/' className='   button1 ' type='submit'>Home</Link>
+        <Link to='/login' className='  button2 ' type='submit'>Sign in</Link>
+        <Link to='/register' className='  button3 ' type='submit'>Sign up</Link>
         </div>
       </main>
     </div>

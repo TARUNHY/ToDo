@@ -25,8 +25,6 @@ const ToDoLogin = () => {
           }else{
             navigate('/error');
           }
-        }else{
-          navigate('/error');
         }
       })
     }
